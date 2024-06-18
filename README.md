@@ -1,6 +1,6 @@
 # koivu-api-gateway
 
-Koivu works as a reverse proxy and an api gateway. It has ratelimiting, apikey authentication and logging.
+Koivu is a lightweight API gateway. By default it has DB-less configuration, ratelimiting, API-key authentication and logging. Koivu is a stateless service and can be run locally, in docker or in kubernetes.
 
 ## Get started
 Koivu has two configuration files: config.yaml and keys.yaml. Route configuration is in config.yaml. API-key authentication is in keys.yaml.
