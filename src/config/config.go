@@ -2,33 +2,64 @@ package config
 
 import (
 	"io/ioutil"
-	"koivu/gateway/auth"
+	"log"
 
 	"gopkg.in/yaml.v3"
 )
 
-type Route struct {
-	Prefix         string
-	Destination    string
-	Authentication auth.AuthType
-}
-
 type Configuration struct {
-	Port   string
-	Routes []Route
+	RouteConfiguration *RouteConfiguration
+	AuthConfiguration  *AuthConfiguration
 }
 
-func LoadConfig(filename string) (*Configuration, error) {
+var configuration *Configuration
+
+func GetConfig() *Configuration {
+	return configuration
+}
+
+func InitConfig() {
+	configuration = &Configuration{}
+
+	err := LoadRouteConfig("../config.yaml")
+	if err != nil {
+		log.Fatalf("Error loading route configuration: %v", err)
+	}
+
+	err = LoadAuthConfig("../keys.yaml")
+	if err != nil {
+		log.Fatalf("Error loading auth configuration: %v", err)
+	}
+}
+
+func LoadAuthConfig(filename string) error {
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	var config Configuration
+	var config AuthConfiguration
 	err = yaml.Unmarshal(data, &config)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	return &config, nil
+	configuration.AuthConfiguration = &config
+	return nil
+}
+
+func LoadRouteConfig(filename string) error {
+	data, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return err
+	}
+
+	var config RouteConfiguration
+	err = yaml.Unmarshal(data, &config)
+	if err != nil {
+		return err
+	}
+
+	configuration.RouteConfiguration = &config
+	return nil
 }
