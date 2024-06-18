@@ -3,9 +3,11 @@
 Koivu works as a reverse proxy and an api gateway. It has ratelimiting, apikey authentication and logging.
 
 ## Get started
-Koivu has two configuration files. One is main configuration for routes (config.yaml) and other for api keys (keys.yaml). Add a simple route to config.yaml
+Koivu has two configuration files: config.yaml and keys.yaml. Route configuration is in config.yaml. API-key authentication is in keys.yaml.
 
---config.yaml--
+### Creating simple config file for koivu-api-gateway.
+
+config.yaml
 ```
 port: "8080"
 routes:
@@ -19,15 +21,27 @@ routes:
       type: ip
 ```
 
-Secure the order route with an api key by specifying authentication type to key in config.yaml and adding a key in keys.yaml by route name.
+### Secure the order route with an api key by specifying authentication type to key in config.yaml and adding a key in keys.yaml by route name.
 
---keys.yaml--
+keys.yaml
 ```
 keys:
   - value: super-secret-password-here
     routes: [order]
 ```
 
-Now run the application
+### Now run the application
 cd /src
 go run ./main.go
+
+### Running koivu in docker
+Refactor the destination of config.yaml routes to be docker-container names.
+cd /src
+Build the image
+docker build -t koivu-api-gateway .
+Create a docker network
+docker network create -d bridge app-network
+Run the docker application
+docker run -p 8080:8080 --network app-network koivu-api-gateway:latest
+
+Remember that the routed applications should be in the docker network!
