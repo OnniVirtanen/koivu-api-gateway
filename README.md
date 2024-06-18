@@ -37,7 +37,7 @@ go run ./main.go
 ```
 
 ### Running koivu in docker
-Refactor the destination of config.yaml routes to be docker-container names.
+Refactor the destinations of routes to be docker-container names.
 ```
 cd /src
 ```
