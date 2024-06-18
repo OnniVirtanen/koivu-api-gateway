@@ -24,3 +24,11 @@ routes:
       requests: 10
       timeframe: second
       type: ip
+  - name: microservice-apples
+    prefix: /api/v1/apples
+    destination: http://microservices.internal.aws.loadbalancer.apples/api/v1/apples
+    authentication: key
+    ratelimit:
+      requests: 10
+      timeframe: second
+      type: ip

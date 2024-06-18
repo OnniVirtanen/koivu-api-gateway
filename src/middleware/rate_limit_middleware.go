@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"fmt"
 	"net/http"
 	"sync"
 	"time"
@@ -65,15 +64,8 @@ func getResetPeriod(timeframe config.RateLimitTimeFrame) time.Duration {
 }
 
 func RateLimitMiddleware(rateLimitConfig *config.RateLimitConfiguration, next http.Handler) http.Handler {
-	fmt.Println("ratelimitconfig", rateLimitConfig)
-
-	// If rateLimitConfig is nil, provide a default configuration
 	if rateLimitConfig == nil {
-		rateLimitConfig = &config.RateLimitConfiguration{
-			Requests:  100, // Default request limit
-			Timeframe: config.Minute,
-			Type:      config.IP,
-		}
+		return next
 	}
 
 	rl := newRateLimiter(int(rateLimitConfig.Requests), getResetPeriod(rateLimitConfig.Timeframe))
