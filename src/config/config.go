@@ -1,8 +1,9 @@
 package config
 
 import (
+	"fmt"
 	"io/ioutil"
-	"log"
+	"sync"
 
 	"gopkg.in/yaml.v3"
 )
@@ -12,54 +13,45 @@ type Configuration struct {
 	AuthConfiguration  *AuthConfiguration
 }
 
-var configuration *Configuration
+var (
+	configuration *Configuration
+	once          sync.Once
+)
 
 func GetConfig() *Configuration {
 	return configuration
 }
 
-func InitConfig() {
-	configuration = &Configuration{}
+func InitConfig() error {
+	var err error
+	once.Do(func() {
+		configuration = &Configuration{
+			RouteConfiguration: &RouteConfiguration{},
+			AuthConfiguration:  &AuthConfiguration{},
+		}
 
-	err := LoadRouteConfig("../config.yaml")
-	if err != nil {
-		log.Fatalf("Error loading route configuration: %v", err)
-	}
+		if err = loadConfig("../config.yaml", &configuration.RouteConfiguration); err != nil {
+			err = fmt.Errorf("error loading route configuration: %w", err)
+			return
+		}
 
-	err = LoadAuthConfig("../keys.yaml")
-	if err != nil {
-		log.Fatalf("Error loading auth configuration: %v", err)
-	}
+		if err = loadConfig("../keys.yaml", &configuration.AuthConfiguration); err != nil {
+			err = fmt.Errorf("error loading auth configuration: %w", err)
+			return
+		}
+	})
+	return err
 }
 
-func LoadAuthConfig(filename string) error {
+func loadConfig(filename string, out interface{}) error {
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to read file %s: %w", filename, err)
 	}
 
-	var config AuthConfiguration
-	err = yaml.Unmarshal(data, &config)
-	if err != nil {
-		return err
+	if err = yaml.Unmarshal(data, out); err != nil {
+		return fmt.Errorf("failed to unmarshal YAML file %s: %w", filename, err)
 	}
 
-	configuration.AuthConfiguration = &config
-	return nil
-}
-
-func LoadRouteConfig(filename string) error {
-	data, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return err
-	}
-
-	var config RouteConfiguration
-	err = yaml.Unmarshal(data, &config)
-	if err != nil {
-		return err
-	}
-
-	configuration.RouteConfiguration = &config
 	return nil
 }

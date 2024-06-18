@@ -14,6 +14,7 @@ func Run() error {
 
 	mux := http.NewServeMux()
 	for _, route := range config.RouteConfiguration.Routes {
+		fmt.Println("route: ", route)
 		targetURL, err := url.Parse(route.Destination)
 		if err != nil {
 			return fmt.Errorf("invalid destination URL: %v", err)
@@ -22,8 +23,10 @@ func Run() error {
 		proxy := NewProxy(targetURL)
 		handler := ProxyRequestHandler(proxy, targetURL, route.Prefix)
 
-		// Wrap the handler with http.HandlerFunc
-		mux.Handle(route.Prefix, middleware.AuthMiddleware(config.AuthConfiguration, route.Authentication, http.HandlerFunc(handler)))
+		finalHandler := middleware.AuthMiddleware(config.AuthConfiguration, route.Authentication, http.HandlerFunc(handler))
+		finalHandler = middleware.RateLimitMiddleware(&route.RateLimitConfiguration, finalHandler)
+
+		mux.Handle(route.Prefix, finalHandler)
 	}
 
 	address := "localhost:" + config.RouteConfiguration.Port

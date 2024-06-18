@@ -4,11 +4,23 @@ routes:
     prefix: /api/v1/order
     destination: http://localhost:8040/v1/order
     authentication: none
+    ratelimit:
+      requests: 5
+      timeframe: hour
+      type: ip
   - name: catalog
     prefix: /api/v1/catalog
     destination: http://localhost:8080/catalog/items
     authentication: none
+    ratelimit:
+      requests: 15
+      timeframe: minute
+      type: ip
   - name: google
     prefix: /google
     destination: http://www.google.com
     authentication: key
+    ratelimit:
+      requests: 10
+      timeframe: second
+      type: ip
