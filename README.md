@@ -21,7 +21,7 @@ routes:
       type: ip
 ```
 
-### Secure the order route with an api key by specifying authentication type to key in config.yaml and adding a key in keys.yaml by route name.
+### Secure the order route
 
 api-keys.yaml
 ```
