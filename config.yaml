@@ -1,6 +1,6 @@
-port: 8080
+port: "8080"
 routes:
-  - prefix: "/api"
-    destination: "http://api.server"
-  - prefix: "/admin"
-    destination: "http://admin.server"
+  - prefix: "/api/v1/order"
+    destination: "http://localhost:8040/v1/order"
+  - prefix: "/api/v1/catalog"
+    destination: "http://localhost:8080/catalog/items"

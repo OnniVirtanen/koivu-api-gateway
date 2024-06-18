@@ -12,7 +12,7 @@ type Route struct {
 }
 
 type Configuration struct {
-	Port   uint16
+	Port   string
 	Routes []Route
 }
 
