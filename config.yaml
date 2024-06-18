@@ -1,0 +1,6 @@
+port: 8080
+routes:
+  - prefix: "/api"
+    destination: "http://api.server"
+  - prefix: "/admin"
+    destination: "http://admin.server"
