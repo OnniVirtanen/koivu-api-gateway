@@ -1,6 +1,10 @@
 port: "8080"
 routes:
-  - prefix: "/api/v1/order"
-    destination: "http://localhost:8040/v1/order"
-  - prefix: "/api/v1/catalog"
-    destination: "http://localhost:8080/catalog/items"
+  - name: order
+    prefix: /api/v1/order
+    destination: http://localhost:8040/v1/order
+    authentication: key
+  - name: catalog
+    prefix: /api/v1/catalog
+    destination: http://localhost:8080/catalog/items
+    authentication: none

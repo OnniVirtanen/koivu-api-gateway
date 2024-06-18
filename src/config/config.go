@@ -2,13 +2,15 @@ package config
 
 import (
 	"io/ioutil"
+	"koivu/gateway/auth"
 
 	"gopkg.in/yaml.v3"
 )
 
 type Route struct {
-	Prefix      string
-	Destination string
+	Prefix         string
+	Destination    string
+	Authentication auth.AuthType
 }
 
 type Configuration struct {
