@@ -31,17 +31,27 @@ keys:
 ```
 
 ### Now run the application
+```
 cd /src
 go run ./main.go
+```
 
 ### Running koivu in docker
 Refactor the destination of config.yaml routes to be docker-container names.
+```
 cd /src
+```
 Build the image
+```
 docker build -t koivu-api-gateway .
+```
 Create a docker network
+```
 docker network create -d bridge app-network
+```
 Run the docker application
+```
 docker run -p 8080:8080 --network app-network koivu-api-gateway:latest
+```
 
 Remember that the routed applications should be in the docker network!
