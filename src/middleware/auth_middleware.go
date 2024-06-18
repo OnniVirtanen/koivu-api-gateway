@@ -18,7 +18,7 @@ func AuthMiddleware(authConfig *config.AuthConfiguration, authType config.AuthTy
 				http.Error(w, "API key required", http.StatusUnauthorized)
 				return
 			}
-			if !IsValidAPIKey(*authConfig, apiKey, r.URL.Path) {
+			if !isValidAPIKey(*authConfig, apiKey, r.URL.Path) {
 				http.Error(w, "Invalid API key", http.StatusUnauthorized)
 				return
 			}
@@ -32,7 +32,7 @@ func AuthMiddleware(authConfig *config.AuthConfiguration, authType config.AuthTy
 	})
 }
 
-func IsValidAPIKey(authConfig config.AuthConfiguration, apiKey string, path string) bool {
+func isValidAPIKey(authConfig config.AuthConfiguration, apiKey string, path string) bool {
 	for _, key := range authConfig.APIKeys {
 		if key.Value == apiKey {
 

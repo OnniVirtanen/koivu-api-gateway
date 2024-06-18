@@ -25,6 +25,7 @@ func Run() error {
 
 		finalHandler := middleware.AuthMiddleware(config.AuthConfiguration, route.Authentication, http.HandlerFunc(handler))
 		finalHandler = middleware.RateLimitMiddleware(&route.RateLimitConfiguration, finalHandler)
+		finalHandler = middleware.LoggerMiddleware(finalHandler)
 
 		mux.Handle(route.Prefix, finalHandler)
 	}
