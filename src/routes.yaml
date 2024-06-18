@@ -1,0 +1,10 @@
+port: "8080"
+routes:
+  - name: order
+    prefix: /api/v1/order
+    destination: http://localhost:8040/v1/order
+    authentication: key
+    ratelimit:
+      requests: 4
+      timeframe: hour
+      type: ip

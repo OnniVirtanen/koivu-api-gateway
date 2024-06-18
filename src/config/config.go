@@ -30,12 +30,12 @@ func InitConfig() error {
 			AuthConfiguration:  &AuthConfiguration{},
 		}
 
-		if err = loadConfig("./config.yaml", &configuration.RouteConfiguration); err != nil {
+		if err = loadConfig("./routes.yaml", &configuration.RouteConfiguration); err != nil {
 			err = fmt.Errorf("error loading route configuration: %w", err)
 			return
 		}
 
-		if err = loadConfig("./keys.yaml", &configuration.AuthConfiguration); err != nil {
+		if err = loadConfig("./api-keys.yaml", &configuration.AuthConfiguration); err != nil {
 			err = fmt.Errorf("error loading auth configuration: %w", err)
 			return
 		}
