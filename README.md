@@ -3,11 +3,11 @@
 Koivu is a lightweight API gateway. By default it has DB-less configuration, ratelimiting, API-key authentication and logging. Koivu is a stateless service and can be run locally, in docker or in kubernetes.
 
 ## Get started
-Koivu has two configuration files: config.yaml and keys.yaml. Route configuration is in config.yaml. API-key authentication is in keys.yaml.
+Koivu has two configuration files: routes.yaml and api-keys.yaml.
 
-### Creating simple config file for koivu-api-gateway.
+### Creating simple routes file for koivu-api-gateway.
 
-config.yaml
+routes.yaml
 ```
 port: "8080"
 routes:
@@ -23,7 +23,7 @@ routes:
 
 ### Secure the order route with an api key by specifying authentication type to key in config.yaml and adding a key in keys.yaml by route name.
 
-keys.yaml
+api-keys.yaml
 ```
 keys:
   - value: super-secret-password-here

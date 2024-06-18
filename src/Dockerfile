@@ -26,8 +26,8 @@ WORKDIR /root/
 COPY --from=builder /app/main .
 
 # Copy configuration files
-COPY ./config.yaml .
-COPY ./keys.yaml .
+COPY ./routes.yaml .
+COPY ./api-keys.yaml .
 
 # Expose the application port (if applicable, change accordingly)
 EXPOSE 8080

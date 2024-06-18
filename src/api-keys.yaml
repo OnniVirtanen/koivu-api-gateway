@@ -1,5 +1,3 @@
 keys:
-  - value: super-secret-1
-    routes: [order]
-  - value: super-secret-2
+  - value: super-secret-api-key-here
     routes: [order]
