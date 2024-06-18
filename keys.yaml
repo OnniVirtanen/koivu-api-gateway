@@ -1,7 +1,5 @@
 keys:
   - value: super-secret-1
-    routes: [/api/v1/order]
+    routes: [order]
   - value: super-secret-2
-    routes: [/api/v1/order]
-  - value: testi
-    routes: [/google]
+    routes: [order]

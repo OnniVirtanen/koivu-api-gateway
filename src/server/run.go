@@ -30,7 +30,7 @@ func Run() error {
 		proxy := NewProxy(targetURL)
 		handler := ProxyRequestHandler(proxy, targetURL, route.Prefix)
 
-		finalHandler := middleware.AuthMiddleware(config.AuthConfiguration, route.Authentication, http.HandlerFunc(handler))
+		finalHandler := middleware.AuthMiddleware(&config, route.Authentication, http.HandlerFunc(handler))
 		finalHandler = middleware.RateLimitMiddleware(&route.RateLimitConfiguration, finalHandler)
 		finalHandler = middleware.LoggerMiddleware(finalHandler)
 

@@ -3,7 +3,7 @@ routes:
   - name: order
     prefix: /api/v1/order
     destination: http://localhost:8040/v1/order
-    authentication: none
+    authentication: key
     ratelimit:
       requests: 5
       timeframe: hour
@@ -15,20 +15,4 @@ routes:
     ratelimit:
       requests: 15
       timeframe: minute
-      type: ip
-  - name: google
-    prefix: /google
-    destination: http://www.google.com
-    authentication: key
-    ratelimit:
-      requests: 10
-      timeframe: second
-      type: ip
-  - name: microservice-apples
-    prefix: /api/v1/apples
-    destination: http://microservices.internal.aws.loadbalancer.apples/api/v1/apples
-    authentication: key
-    ratelimit:
-      requests: 10
-      timeframe: second
       type: ip
