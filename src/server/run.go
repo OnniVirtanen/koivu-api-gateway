@@ -42,7 +42,7 @@ func Run() error {
 	fmt.Printf("Routes found %v\n", len(config.RouteConfiguration.Routes))
 	fmt.Printf("API-keys found %v\n", len(config.AuthConfiguration.APIKeys))
 
-	address := "localhost:" + config.RouteConfiguration.Port
+	address := "0.0.0.0:" + config.RouteConfiguration.Port
 
 	elapsedTime := time.Since(startTime)
 	fmt.Println(separator)
