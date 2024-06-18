@@ -54,6 +54,10 @@ Run the docker application
 docker run -p 8080:8080 --network app-network koivu-api-gateway:latest
 ```
 
+Example when running application as a docker container
+![image](https://github.com/OnniVirtanen/koivu-api-gateway/assets/116679314/9df233b9-9123-4ef5-8c4e-9488dabcac3b)
+
+
 Remember that the routed applications should be in the docker network!
 
 ### Ratelimiting
@@ -69,3 +73,4 @@ Available ratelimiting parameters are the following:
 Available authentication parameters are the following:
 
 - **authentication**: `key`, `none`
+
