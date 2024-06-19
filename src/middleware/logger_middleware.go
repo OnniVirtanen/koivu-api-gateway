@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"io/ioutil"
+	"koivu/gateway/logger"
 	"log"
 	"net/http"
 	"time"
@@ -11,16 +13,21 @@ func LoggerMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
 
-		// Log request details
-		log.Printf("Request: %s %s %s\n", r.Method, r.RequestURI, r.Proto)
-		log.Printf("Remote Address: %s\n", r.RemoteAddr)
-
-		// If you want to log headers, uncomment the following lines
-		for name, values := range r.Header {
-			for _, value := range values {
-				log.Printf("Header: %s: %s\n", name, value)
+		var requestBody string
+		if r.Body != nil {
+			bodyBytes, err := ioutil.ReadAll(r.Body)
+			if err == nil {
+				requestBody = string(bodyBytes)
+				r.Body = ioutil.NopCloser(r.Body)
 			}
 		}
+
+		// Log request details
+		logger.Log("Request: %s %s %s", r.Method, r.RequestURI, r.Proto)
+		logger.Log("Remote Address: %s", r.RemoteAddr)
+		logger.Log("User-Agent: %s", r.Header.Get("User-Agent"))
+		logger.Log("Referer: %s", r.Header.Get("Referer"))
+		logger.Log("Request Body: %s", requestBody)
 
 		// Create a response writer to capture the status code
 		rw := &responseWriter{w, http.StatusOK}
@@ -29,7 +36,7 @@ func LoggerMiddleware(next http.Handler) http.Handler {
 		next.ServeHTTP(rw, r)
 
 		// Log the response status and the time taken
-		log.Printf("Response Status: %d\n", rw.statusCode)
+		logger.Log("Request Body: %s", requestBody)
 		log.Printf("Request Duration: %s\n", time.Since(start))
 	})
 }

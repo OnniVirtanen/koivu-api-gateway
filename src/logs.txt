@@ -1,0 +1,40 @@
+[2024-06-19 12:28:12] Request: GET /api/v1/order HTTP/1.1
+[2024-06-19 12:28:12] Remote Address: [::1]:51409
+[2024-06-19 12:28:12] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:28:12] Referer: 
+[2024-06-19 12:28:12] Request Body: 
+[2024-06-19 12:28:12] Request Body: 
+[2024-06-19 12:28:13] Request: GET /api/v1/order HTTP/1.1
+[2024-06-19 12:28:13] Remote Address: [::1]:51409
+[2024-06-19 12:28:13] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:28:13] Referer: 
+[2024-06-19 12:28:13] Request Body: 
+[2024-06-19 12:28:13] Request Body: 
+[2024-06-19 12:28:15] Request: POST /api/v1/order HTTP/1.1
+[2024-06-19 12:28:15] Remote Address: [::1]:51409
+[2024-06-19 12:28:15] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:28:15] Referer: 
+[2024-06-19 12:28:15] Request Body: {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "customerId": "CUST12345",
+    "productIds": [
+        "PROD1",
+        "PROD2",
+        "PROD3"
+    ],
+    "price": 100.0,
+    "date": "2024-06-19T12:00:00Z"
+}
+
+[2024-06-19 12:28:15] Request Body: {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "customerId": "CUST12345",
+    "productIds": [
+        "PROD1",
+        "PROD2",
+        "PROD3"
+    ],
+    "price": 100.0,
+    "date": "2024-06-19T12:00:00Z"
+}
+
