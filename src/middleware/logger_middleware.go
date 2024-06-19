@@ -3,7 +3,6 @@ package middleware
 import (
 	"io/ioutil"
 	"koivu/gateway/logger"
-	"log"
 	"net/http"
 	"time"
 )
@@ -36,8 +35,8 @@ func LoggerMiddleware(next http.Handler) http.Handler {
 		next.ServeHTTP(rw, r)
 
 		// Log the response status and the time taken
-		logger.Log("Request Body: %s", requestBody)
-		log.Printf("Request Duration: %s\n", time.Since(start))
+		logger.Log("Response Status: %d", rw.statusCode)
+		logger.Log("Request Duration: %s", time.Since(start))
 	})
 }
 

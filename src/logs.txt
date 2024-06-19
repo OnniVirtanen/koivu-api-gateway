@@ -1,20 +1,8 @@
-[2024-06-19 12:28:12] Request: GET /api/v1/order HTTP/1.1
-[2024-06-19 12:28:12] Remote Address: [::1]:51409
-[2024-06-19 12:28:12] User-Agent: PostmanRuntime/7.37.3
-[2024-06-19 12:28:12] Referer: 
-[2024-06-19 12:28:12] Request Body: 
-[2024-06-19 12:28:12] Request Body: 
-[2024-06-19 12:28:13] Request: GET /api/v1/order HTTP/1.1
-[2024-06-19 12:28:13] Remote Address: [::1]:51409
-[2024-06-19 12:28:13] User-Agent: PostmanRuntime/7.37.3
-[2024-06-19 12:28:13] Referer: 
-[2024-06-19 12:28:13] Request Body: 
-[2024-06-19 12:28:13] Request Body: 
-[2024-06-19 12:28:15] Request: POST /api/v1/order HTTP/1.1
-[2024-06-19 12:28:15] Remote Address: [::1]:51409
-[2024-06-19 12:28:15] User-Agent: PostmanRuntime/7.37.3
-[2024-06-19 12:28:15] Referer: 
-[2024-06-19 12:28:15] Request Body: {
+[2024-06-19 12:31:40] Request: POST /api/v1/order HTTP/1.1
+[2024-06-19 12:31:40] Remote Address: [::1]:51462
+[2024-06-19 12:31:40] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:31:40] Referer: 
+[2024-06-19 12:31:40] Request Body: {
     "id": "123e4567-e89b-12d3-a456-426614174000",
     "customerId": "CUST12345",
     "productIds": [
@@ -26,15 +14,26 @@
     "date": "2024-06-19T12:00:00Z"
 }
 
-[2024-06-19 12:28:15] Request Body: {
-    "id": "123e4567-e89b-12d3-a456-426614174000",
-    "customerId": "CUST12345",
-    "productIds": [
-        "PROD1",
-        "PROD2",
-        "PROD3"
-    ],
-    "price": 100.0,
-    "date": "2024-06-19T12:00:00Z"
-}
-
+[2024-06-19 12:31:40] Response Status: 502
+[2024-06-19 12:31:40] Request Duration: 23.5874ms
+[2024-06-19 12:31:43] Request: GET /api/v1/order HTTP/1.1
+[2024-06-19 12:31:43] Remote Address: [::1]:51462
+[2024-06-19 12:31:43] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:31:43] Referer: 
+[2024-06-19 12:31:43] Request Body: 
+[2024-06-19 12:31:43] Response Status: 200
+[2024-06-19 12:31:43] Request Duration: 8.5852ms
+[2024-06-19 12:31:44] Request: GET /api/v1/order HTTP/1.1
+[2024-06-19 12:31:44] Remote Address: [::1]:51462
+[2024-06-19 12:31:44] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:31:44] Referer: 
+[2024-06-19 12:31:44] Request Body: 
+[2024-06-19 12:31:44] Response Status: 200
+[2024-06-19 12:31:44] Request Duration: 5.1968ms
+[2024-06-19 12:31:46] Request: GET /api/v1/order HTTP/1.1
+[2024-06-19 12:31:46] Remote Address: [::1]:51462
+[2024-06-19 12:31:46] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 12:31:46] Referer: 
+[2024-06-19 12:31:46] Request Body: 
+[2024-06-19 12:31:46] Response Status: 200
+[2024-06-19 12:31:46] Request Duration: 9.055ms

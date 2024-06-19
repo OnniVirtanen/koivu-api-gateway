@@ -78,7 +78,6 @@ func RateLimitMiddleware(redisAddr string, redisPassword string, rateLimitConfig
 	rl := newRateLimiter(redisAddr, redisPassword, int(rateLimitConfig.Requests), getResetPeriod(rateLimitConfig.Timeframe))
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("in here")
 		ctx := r.Context()
 		ip := r.RemoteAddr
 
