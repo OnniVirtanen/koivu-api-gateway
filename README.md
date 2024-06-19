@@ -3,7 +3,7 @@
 Koivu is a lightweight API gateway. By default it has DB-less configuration, ratelimiting, API-key authentication and logging. Koivu is a stateless service and can be run locally, in docker or in kubernetes.
 
 ## Get started
-Koivu has two configuration files: routes.yaml and api-keys.yaml.
+Koivu has three configuration files: routes.yaml, api-keys.yaml and redis.yaml.
 
 ### Creating simple routes file for koivu-api-gateway.
 
@@ -28,6 +28,15 @@ api-keys.yaml
 keys:
   - value: super-secret-password-here
     routes: [order]
+```
+
+### Add redis configuration. Request counts for ratelimiter are stored in redis
+
+redis.yaml
+```
+redis:
+  url: localhost:6379
+  password: ""
 ```
 
 ### Now run the application
