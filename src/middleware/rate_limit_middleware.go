@@ -1,51 +1,58 @@
 package middleware
 
 import (
+	"context"
+	"fmt"
 	"net/http"
-	"sync"
 	"time"
 
 	"koivu/gateway/config"
+
+	"github.com/redis/go-redis/v9"
 )
 
 type rateLimiter struct {
-	visits      map[string]int
-	mu          sync.Mutex
+	client      *redis.Client
 	limit       int
 	resetPeriod time.Duration
 }
 
-func newRateLimiter(limit int, resetPeriod time.Duration) *rateLimiter {
-	rl := &rateLimiter{
-		visits:      make(map[string]int),
+func newRateLimiter(redisAddr string, redisPassword string, limit int, resetPeriod time.Duration) *rateLimiter {
+	client := redis.NewClient(&redis.Options{
+		Addr:     redisAddr,
+		Password: redisPassword,
+		DB:       0, // use default DB
+	})
+
+	return &rateLimiter{
+		client:      client,
 		limit:       limit,
 		resetPeriod: resetPeriod,
 	}
-
-	go rl.resetVisits()
-	return rl
 }
 
-func (rl *rateLimiter) resetVisits() {
-	for {
-		time.Sleep(rl.resetPeriod)
-		rl.mu.Lock()
-		rl.visits = make(map[string]int)
-		rl.mu.Unlock()
-	}
-}
+func (rl *rateLimiter) allowVisit(ctx context.Context, ip string) (bool, error) {
+	key := fmt.Sprintf("rate_limit:%s", ip)
 
-func (rl *rateLimiter) allowVisit(ip string) bool {
-	rl.mu.Lock()
-	defer rl.mu.Unlock()
-
-	visits := rl.visits[ip]
-	if visits >= rl.limit {
-		return false
+	// Increment the visit count
+	visits, err := rl.client.Incr(ctx, key).Result()
+	if err != nil {
+		return false, err
 	}
 
-	rl.visits[ip]++
-	return true
+	// Set the expiration if this is the first visit
+	if visits == 1 {
+		_, err := rl.client.Expire(ctx, key, rl.resetPeriod).Result()
+		if err != nil {
+			return false, err
+		}
+	}
+
+	if visits > int64(rl.limit) {
+		return false, nil
+	}
+
+	return true, nil
 }
 
 func getResetPeriod(timeframe config.RateLimitTimeFrame) time.Duration {
@@ -63,16 +70,25 @@ func getResetPeriod(timeframe config.RateLimitTimeFrame) time.Duration {
 	}
 }
 
-func RateLimitMiddleware(rateLimitConfig *config.RateLimitConfiguration, next http.Handler) http.Handler {
+func RateLimitMiddleware(redisAddr string, redisPassword string, rateLimitConfig *config.RateLimitConfiguration, next http.Handler) http.Handler {
 	if rateLimitConfig == nil {
 		return next
 	}
 
-	rl := newRateLimiter(int(rateLimitConfig.Requests), getResetPeriod(rateLimitConfig.Timeframe))
+	rl := newRateLimiter(redisAddr, redisPassword, int(rateLimitConfig.Requests), getResetPeriod(rateLimitConfig.Timeframe))
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("in here")
+		ctx := r.Context()
 		ip := r.RemoteAddr
-		if !rl.allowVisit(ip) {
+
+		allowed, err := rl.allowVisit(ctx, ip)
+		if err != nil {
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+
+		if !allowed {
 			http.Error(w, "Too many requests", http.StatusTooManyRequests)
 			return
 		}

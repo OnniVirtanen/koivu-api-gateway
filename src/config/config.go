@@ -11,6 +11,7 @@ import (
 type Configuration struct {
 	RouteConfiguration *RouteConfiguration
 	AuthConfiguration  *AuthConfiguration
+	RedisConfiguration *RedisConfiguration
 }
 
 var (
@@ -28,6 +29,7 @@ func InitConfig() error {
 		configuration = &Configuration{
 			RouteConfiguration: &RouteConfiguration{},
 			AuthConfiguration:  &AuthConfiguration{},
+			RedisConfiguration: &RedisConfiguration{},
 		}
 
 		if err = loadConfig("./routes.yaml", &configuration.RouteConfiguration); err != nil {
@@ -37,6 +39,11 @@ func InitConfig() error {
 
 		if err = loadConfig("./api-keys.yaml", &configuration.AuthConfiguration); err != nil {
 			err = fmt.Errorf("error loading auth configuration: %w", err)
+			return
+		}
+
+		if err = loadConfig("./redis.yaml", &configuration.RedisConfiguration); err != nil {
+			err = fmt.Errorf("error loading redis configuration: %w", err)
 			return
 		}
 	})
