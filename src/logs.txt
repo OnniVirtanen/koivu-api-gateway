@@ -37,3 +37,458 @@
 [2024-06-19 12:31:46] Request Body: 
 [2024-06-19 12:31:46] Response Status: 200
 [2024-06-19 12:31:46] Request Duration: 9.055ms
+[2024-06-19 14:38:27] Request: GET /order HTTP/1.1
+[2024-06-19 14:38:27] Remote Address: [::1]:51819
+[2024-06-19 14:38:27] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:27] Referer: 
+[2024-06-19 14:38:27] Request Body: 
+[2024-06-19 14:38:27] Response Status: 200
+[2024-06-19 14:38:27] Request Duration: 18.9798ms
+[2024-06-19 14:38:34] Request: POST /catalog HTTP/1.1
+[2024-06-19 14:38:34] Remote Address: [::1]:51819
+[2024-06-19 14:38:34] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:34] Referer: 
+[2024-06-19 14:38:34] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:38:34] Response Status: 401
+[2024-06-19 14:38:34] Request Duration: 11.6972ms
+[2024-06-19 14:38:40] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:38:40] Remote Address: [::1]:51819
+[2024-06-19 14:38:40] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:40] Referer: 
+[2024-06-19 14:38:40] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:38:40] Response Status: 401
+[2024-06-19 14:38:40] Request Duration: 2.8439ms
+[2024-06-19 14:38:41] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:38:41] Remote Address: [::1]:51819
+[2024-06-19 14:38:41] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:41] Referer: 
+[2024-06-19 14:38:41] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:38:41] Response Status: 401
+[2024-06-19 14:38:41] Request Duration: 2.0023ms
+[2024-06-19 14:38:55] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:38:55] Remote Address: [::1]:51830
+[2024-06-19 14:38:55] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:55] Referer: 
+[2024-06-19 14:38:55] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:38:55] Response Status: 502
+[2024-06-19 14:38:55] Request Duration: 13.2121ms
+[2024-06-19 14:38:59] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:38:59] Remote Address: [::1]:51830
+[2024-06-19 14:38:59] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:38:59] Referer: 
+[2024-06-19 14:38:59] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:38:59] Response Status: 502
+[2024-06-19 14:38:59] Request Duration: 2.3756ms
+[2024-06-19 14:40:00] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:40:00] Remote Address: [::1]:51851
+[2024-06-19 14:40:00] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:40:00] Referer: 
+[2024-06-19 14:40:00] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:40:00] Response Status: 502
+[2024-06-19 14:40:00] Request Duration: 13.9035ms
+[2024-06-19 14:40:03] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:40:03] Remote Address: [::1]:51851
+[2024-06-19 14:40:03] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:40:03] Referer: 
+[2024-06-19 14:40:03] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:40:03] Response Status: 502
+[2024-06-19 14:40:03] Request Duration: 3.3032ms
+[2024-06-19 14:40:35] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:40:35] Remote Address: [::1]:51862
+[2024-06-19 14:40:35] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:40:35] Referer: 
+[2024-06-19 14:40:35] Request Body: {
+    "username": "123testi henkilggö",
+    "company": "213testi yritys",
+    "email": "testi sähköposti",
+    "message": "testi viesti"
+}
+[2024-06-19 14:40:38] Response Status: 502
+[2024-06-19 14:40:38] Request Duration: 2.7268771s
+[2024-06-19 14:53:13] Creating new rate limiter redis client
+[2024-06-19 14:53:13] Creating new rate limiter redis client
+[2024-06-19 14:54:25] Request: GET /order HTTP/1.1
+[2024-06-19 14:54:25] Remote Address: [::1]:52735
+[2024-06-19 14:54:25] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:54:25] Referer: 
+[2024-06-19 14:54:25] Request Body: 
+[2024-06-19 14:54:25] Response Status: 401
+[2024-06-19 14:54:25] Request Duration: 11.6427ms
+[2024-06-19 14:54:44] Request: GET /order HTTP/1.1
+[2024-06-19 14:54:44] Remote Address: [::1]:52735
+[2024-06-19 14:54:44] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:54:44] Referer: 
+[2024-06-19 14:54:44] Request Body: 
+[2024-06-19 14:54:44] Response Status: 502
+[2024-06-19 14:54:44] Request Duration: 5.6488ms
+[2024-06-19 14:54:48] Request: GET /order HTTP/1.1
+[2024-06-19 14:54:48] Remote Address: [::1]:52735
+[2024-06-19 14:54:48] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:54:48] Referer: 
+[2024-06-19 14:54:48] Request Body: 
+[2024-06-19 14:54:48] Response Status: 502
+[2024-06-19 14:54:48] Request Duration: 2.9384ms
+[2024-06-19 14:55:01] Request: GET /order HTTP/1.1
+[2024-06-19 14:55:01] Remote Address: [::1]:52735
+[2024-06-19 14:55:01] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:55:01] Referer: 
+[2024-06-19 14:55:01] Request Body: 
+[2024-06-19 14:55:01] Response Status: 502
+[2024-06-19 14:55:01] Request Duration: 4.7857ms
+[2024-06-19 14:55:22] Request: GET /order HTTP/1.1
+[2024-06-19 14:55:22] Remote Address: [::1]:52735
+[2024-06-19 14:55:22] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:55:22] Referer: 
+[2024-06-19 14:55:22] Request Body: 
+[2024-06-19 14:55:22] Response Status: 200
+[2024-06-19 14:55:22] Request Duration: 17.9477ms
+[2024-06-19 14:55:23] Request: GET /order HTTP/1.1
+[2024-06-19 14:55:23] Remote Address: [::1]:52735
+[2024-06-19 14:55:23] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:55:23] Referer: 
+[2024-06-19 14:55:23] Request Body: 
+[2024-06-19 14:55:23] Response Status: 429
+[2024-06-19 14:55:23] Request Duration: 2.5637ms
+[2024-06-19 14:55:24] Request: GET /order HTTP/1.1
+[2024-06-19 14:55:24] Remote Address: [::1]:52735
+[2024-06-19 14:55:24] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:55:24] Referer: 
+[2024-06-19 14:55:24] Request Body: 
+[2024-06-19 14:55:24] Response Status: 429
+[2024-06-19 14:55:24] Request Duration: 2.3796ms
+[2024-06-19 14:55:43] Request: GET /order HTTP/1.1
+[2024-06-19 14:55:43] Remote Address: [::1]:52764
+[2024-06-19 14:55:43] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:55:43] Referer: 
+[2024-06-19 14:55:43] Request Body: 
+[2024-06-19 14:55:43] Response Status: 200
+[2024-06-19 14:55:43] Request Duration: 13.414ms
+[2024-06-19 14:57:58] Request: GET /order HTTP/1.1
+[2024-06-19 14:57:58] Remote Address: [::1]:52782
+[2024-06-19 14:57:58] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:57:58] Referer: 
+[2024-06-19 14:57:58] Request Body: 
+[2024-06-19 14:57:58] Response Status: 200
+[2024-06-19 14:57:58] Request Duration: 14.0859ms
+[2024-06-19 14:58:00] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:58:00] Remote Address: [::1]:52782
+[2024-06-19 14:58:00] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:58:00] Referer: 
+[2024-06-19 14:58:00] Request Body: 
+[2024-06-19 14:58:01] Response Status: 404
+[2024-06-19 14:58:01] Request Duration: 172.9691ms
+[2024-06-19 14:58:03] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:58:03] Remote Address: [::1]:52782
+[2024-06-19 14:58:03] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:58:03] Referer: 
+[2024-06-19 14:58:03] Request Body: 
+[2024-06-19 14:58:03] Response Status: 404
+[2024-06-19 14:58:03] Request Duration: 7.5511ms
+[2024-06-19 14:59:57] Request: GET /catalog HTTP/1.1
+[2024-06-19 14:59:57] Remote Address: [::1]:52807
+[2024-06-19 14:59:57] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 14:59:57] Referer: 
+[2024-06-19 14:59:57] Request Body: 
+[2024-06-19 14:59:57] Response Status: 404
+[2024-06-19 14:59:57] Request Duration: 21.0257ms
+[2024-06-19 15:00:35] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:00:35] Remote Address: [::1]:52814
+[2024-06-19 15:00:35] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:00:35] Referer: 
+[2024-06-19 15:00:35] Request Body: 
+[2024-06-19 15:00:35] Response Status: 404
+[2024-06-19 15:00:35] Request Duration: 20.6952ms
+[2024-06-19 15:00:44] Request: GET /order HTTP/1.1
+[2024-06-19 15:00:44] Remote Address: [::1]:52814
+[2024-06-19 15:00:44] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:00:44] Referer: 
+[2024-06-19 15:00:44] Request Body: 
+[2024-06-19 15:00:44] Response Status: 200
+[2024-06-19 15:00:44] Request Duration: 8.9569ms
+[2024-06-19 15:01:15] Request: GET /order HTTP/1.1
+[2024-06-19 15:01:15] Remote Address: [::1]:52826
+[2024-06-19 15:01:15] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:01:15] Referer: 
+[2024-06-19 15:01:15] Request Body: 
+[2024-06-19 15:01:15] Response Status: 200
+[2024-06-19 15:01:15] Request Duration: 13.7045ms
+[2024-06-19 15:01:23] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:01:23] Remote Address: [::1]:52826
+[2024-06-19 15:01:23] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:01:23] Referer: 
+[2024-06-19 15:01:23] Request Body: 
+[2024-06-19 15:01:23] Response Status: 404
+[2024-06-19 15:01:23] Request Duration: 13.7003ms
+[2024-06-19 15:02:05] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:02:05] Remote Address: [::1]:52841
+[2024-06-19 15:02:05] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:02:05] Referer: 
+[2024-06-19 15:02:05] Request Body: 
+[2024-06-19 15:02:05] Response Status: 404
+[2024-06-19 15:02:05] Request Duration: 19.0653ms
+[2024-06-19 15:02:46] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:02:46] Remote Address: [::1]:52853
+[2024-06-19 15:02:46] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:02:46] Referer: 
+[2024-06-19 15:02:46] Request Body: 
+[2024-06-19 15:02:46] Response Status: 404
+[2024-06-19 15:02:46] Request Duration: 32.9172ms
+[2024-06-19 15:03:36] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:03:36] Remote Address: [::1]:52869
+[2024-06-19 15:03:36] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:03:36] Referer: 
+[2024-06-19 15:03:36] Request Body: 
+[2024-06-19 15:03:36] Response Status: 404
+[2024-06-19 15:03:36] Request Duration: 20.6675ms
+[2024-06-19 15:04:51] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:04:51] Remote Address: [::1]:52882
+[2024-06-19 15:04:51] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:04:51] Referer: 
+[2024-06-19 15:04:51] Request Body: 
+[2024-06-19 15:04:51] Response Status: 404
+[2024-06-19 15:04:51] Request Duration: 31.3987ms
+[2024-06-19 15:04:53] Request: GET /order HTTP/1.1
+[2024-06-19 15:04:53] Remote Address: [::1]:52882
+[2024-06-19 15:04:53] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:04:53] Referer: 
+[2024-06-19 15:04:53] Request Body: 
+[2024-06-19 15:04:53] Response Status: 200
+[2024-06-19 15:04:53] Request Duration: 7.1113ms
+[2024-06-19 15:07:13] Request: GET /order HTTP/1.1
+[2024-06-19 15:07:13] Remote Address: [::1]:53106
+[2024-06-19 15:07:13] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:07:13] Referer: 
+[2024-06-19 15:07:13] Request Body: 
+[2024-06-19 15:07:13] Response Status: 200
+[2024-06-19 15:07:13] Request Duration: 25.4936ms
+[2024-06-19 15:12:08] Request: GET /order HTTP/1.1
+[2024-06-19 15:12:08] Remote Address: [::1]:53155
+[2024-06-19 15:12:08] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:12:08] Referer: 
+[2024-06-19 15:12:08] Request Body: 
+[2024-06-19 15:12:08] Response Status: 200
+[2024-06-19 15:12:08] Request Duration: 15.4352ms
+[2024-06-19 15:12:10] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:12:10] Remote Address: [::1]:53155
+[2024-06-19 15:12:10] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:12:10] Referer: 
+[2024-06-19 15:12:10] Request Body: 
+[2024-06-19 15:12:10] Response Status: 404
+[2024-06-19 15:12:10] Request Duration: 25.5064ms
+[2024-06-19 15:17:18] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:17:18] Remote Address: [::1]:53197
+[2024-06-19 15:17:18] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:17:18] Referer: 
+[2024-06-19 15:17:18] Request Body: 
+[2024-06-19 15:17:18] Response Status: 404
+[2024-06-19 15:17:18] Request Duration: 17.9881ms
+[2024-06-19 15:17:37] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:17:37] Remote Address: [::1]:53197
+[2024-06-19 15:17:37] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:17:37] Referer: 
+[2024-06-19 15:17:37] Request Body: 
+[2024-06-19 15:17:37] Response Status: 404
+[2024-06-19 15:17:37] Request Duration: 5.9441ms
+[2024-06-19 15:17:44] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:17:44] Remote Address: [::1]:53197
+[2024-06-19 15:17:44] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:17:44] Referer: 
+[2024-06-19 15:17:44] Request Body: 
+[2024-06-19 15:17:44] Response Status: 404
+[2024-06-19 15:17:44] Request Duration: 6.6156ms
+[2024-06-19 15:17:45] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:17:45] Remote Address: [::1]:53197
+[2024-06-19 15:17:45] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:17:45] Referer: 
+[2024-06-19 15:17:45] Request Body: 
+[2024-06-19 15:17:45] Response Status: 404
+[2024-06-19 15:17:45] Request Duration: 6.7337ms
+[2024-06-19 15:17:45] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:17:45] Remote Address: [::1]:53197
+[2024-06-19 15:17:45] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:17:45] Referer: 
+[2024-06-19 15:17:45] Request Body: 
+[2024-06-19 15:17:45] Response Status: 404
+[2024-06-19 15:17:45] Request Duration: 6.2834ms
+[2024-06-19 15:18:42] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:18:42] Remote Address: [::1]:53197
+[2024-06-19 15:18:42] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:18:42] Referer: 
+[2024-06-19 15:18:42] Request Body: 
+[2024-06-19 15:18:42] Response Status: 429
+[2024-06-19 15:18:42] Request Duration: 2.1452ms
+[2024-06-19 15:18:43] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:18:43] Remote Address: [::1]:53197
+[2024-06-19 15:18:43] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:18:43] Referer: 
+[2024-06-19 15:18:43] Request Body: 
+[2024-06-19 15:18:43] Response Status: 429
+[2024-06-19 15:18:43] Request Duration: 2.0709ms
+[2024-06-19 15:18:56] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:18:56] Remote Address: [::1]:53230
+[2024-06-19 15:18:56] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:18:56] Referer: 
+[2024-06-19 15:18:56] Request Body: 
+[2024-06-19 15:18:57] Response Status: 404
+[2024-06-19 15:18:57] Request Duration: 197.0546ms
+[2024-06-19 15:19:05] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:19:05] Remote Address: [::1]:53230
+[2024-06-19 15:19:05] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:19:05] Referer: 
+[2024-06-19 15:19:05] Request Body: 
+[2024-06-19 15:19:05] Response Status: 404
+[2024-06-19 15:19:05] Request Duration: 9.1452ms
+[2024-06-19 15:19:42] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:19:42] Remote Address: [::1]:53230
+[2024-06-19 15:19:42] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:19:42] Referer: 
+[2024-06-19 15:19:42] Request Body: 
+[2024-06-19 15:19:42] Response Status: 404
+[2024-06-19 15:19:42] Request Duration: 9.3365ms
+[2024-06-19 15:19:45] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:19:45] Remote Address: [::1]:53230
+[2024-06-19 15:19:45] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:19:45] Referer: 
+[2024-06-19 15:19:45] Request Body: 
+[2024-06-19 15:19:45] Response Status: 404
+[2024-06-19 15:19:45] Request Duration: 7.6649ms
+[2024-06-19 15:22:39] Request: GET /catalog HTTP/1.1
+[2024-06-19 15:22:39] Remote Address: [::1]:53273
+[2024-06-19 15:22:39] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 15:22:39] Referer: 
+[2024-06-19 15:22:39] Request Body: 
+[2024-06-19 15:22:39] Response Status: 404
+[2024-06-19 15:22:39] Request Duration: 20.1831ms
+[2024-06-19 16:00:57] Request: GET /order HTTP/1.1
+[2024-06-19 16:00:57] Remote Address: [::1]:54621
+[2024-06-19 16:00:57] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:00:57] Referer: 
+[2024-06-19 16:00:57] Request Body: 
+[2024-06-19 16:00:57] Response Status: 301
+[2024-06-19 16:00:57] Request Duration: 13.9655ms
+[2024-06-19 16:00:58] Request: GET /order HTTP/1.1
+[2024-06-19 16:00:58] Remote Address: [::1]:54621
+[2024-06-19 16:00:58] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:00:58] Referer: 
+[2024-06-19 16:00:58] Request Body: 
+[2024-06-19 16:00:58] Response Status: 301
+[2024-06-19 16:00:58] Request Duration: 3.0214ms
+[2024-06-19 16:01:46] Request: GET /order HTTP/1.1
+[2024-06-19 16:01:46] Remote Address: [::1]:54621
+[2024-06-19 16:01:46] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:01:46] Referer: 
+[2024-06-19 16:01:46] Request Body: 
+[2024-06-19 16:01:46] Response Status: 301
+[2024-06-19 16:01:46] Request Duration: 13.8248ms
+[2024-06-19 16:01:46] Request: GET /order HTTP/1.1
+[2024-06-19 16:01:46] Remote Address: [::1]:54621
+[2024-06-19 16:01:46] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:01:46] Referer: 
+[2024-06-19 16:01:46] Request Body: 
+[2024-06-19 16:01:46] Response Status: 301
+[2024-06-19 16:01:46] Request Duration: 13.3526ms
+[2024-06-19 16:01:47] Request: GET /order HTTP/1.1
+[2024-06-19 16:01:47] Remote Address: [::1]:54621
+[2024-06-19 16:01:47] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:01:47] Referer: 
+[2024-06-19 16:01:47] Request Body: 
+[2024-06-19 16:01:47] Response Status: 301
+[2024-06-19 16:01:47] Request Duration: 3.1093ms
+[2024-06-19 16:02:14] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:14] Remote Address: [::1]:54621
+[2024-06-19 16:02:14] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:14] Referer: 
+[2024-06-19 16:02:14] Request Body: 
+[2024-06-19 16:02:14] Response Status: 429
+[2024-06-19 16:02:14] Request Duration: 2.7798ms
+[2024-06-19 16:02:17] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:17] Remote Address: [::1]:54621
+[2024-06-19 16:02:17] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:17] Referer: 
+[2024-06-19 16:02:17] Request Body: 
+[2024-06-19 16:02:17] Response Status: 429
+[2024-06-19 16:02:17] Request Duration: 1.962ms
+[2024-06-19 16:02:18] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:18] Remote Address: [::1]:54621
+[2024-06-19 16:02:18] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:18] Referer: 
+[2024-06-19 16:02:18] Request Body: 
+[2024-06-19 16:02:18] Response Status: 429
+[2024-06-19 16:02:18] Request Duration: 2.017ms
+[2024-06-19 16:02:18] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:18] Remote Address: [::1]:54621
+[2024-06-19 16:02:18] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:18] Referer: 
+[2024-06-19 16:02:18] Request Body: 
+[2024-06-19 16:02:18] Response Status: 429
+[2024-06-19 16:02:18] Request Duration: 2.1882ms
+[2024-06-19 16:02:27] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:27] Remote Address: [::1]:54649
+[2024-06-19 16:02:27] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:27] Referer: 
+[2024-06-19 16:02:27] Request Body: 
+[2024-06-19 16:02:27] Response Status: 301
+[2024-06-19 16:02:27] Request Duration: 13.8578ms
+[2024-06-19 16:02:28] Request: GET /order HTTP/1.1
+[2024-06-19 16:02:28] Remote Address: [::1]:54649
+[2024-06-19 16:02:28] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:02:28] Referer: 
+[2024-06-19 16:02:28] Request Body: 
+[2024-06-19 16:02:28] Response Status: 301
+[2024-06-19 16:02:28] Request Duration: 3.712ms
+[2024-06-19 16:05:17] Request: GET /order HTTP/1.1
+[2024-06-19 16:05:17] Remote Address: [::1]:54693
+[2024-06-19 16:05:17] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:05:17] Referer: 
+[2024-06-19 16:05:17] Request Body: 
+[2024-06-19 16:05:17] Response Status: 301
+[2024-06-19 16:05:17] Request Duration: 15.6268ms
+[2024-06-19 16:05:20] Request: GET /catalog HTTP/1.1
+[2024-06-19 16:05:20] Remote Address: [::1]:54693
+[2024-06-19 16:05:20] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:05:20] Referer: 
+[2024-06-19 16:05:20] Request Body: 
+[2024-06-19 16:05:20] Response Status: 200
+[2024-06-19 16:05:20] Request Duration: 12.5481ms
+[2024-06-19 16:05:35] Request: GET /order HTTP/1.1
+[2024-06-19 16:05:35] Remote Address: [::1]:54693
+[2024-06-19 16:05:35] User-Agent: PostmanRuntime/7.37.3
+[2024-06-19 16:05:35] Referer: 
+[2024-06-19 16:05:35] Request Body: 
+[2024-06-19 16:05:35] Response Status: 301
+[2024-06-19 16:05:35] Request Duration: 2.5181ms

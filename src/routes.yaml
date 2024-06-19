@@ -1,9 +1,17 @@
-port: "8080"
+port: "8081"
 routes:
   - name: order
-    prefix: /api/v1/order
+    prefix: /order
     destination: http://localhost:8040/v1/order
     authentication: key
+    ratelimit:
+      requests: 5
+      timeframe: hour
+      type: ip
+  - name: catalog
+    prefix: /catalog
+    destination: http://localhost:8080/api/v1/inventory/products
+    authentication: none
     ratelimit:
       requests: 5
       timeframe: hour

@@ -27,13 +27,14 @@ func Run() error {
 			return fmt.Errorf("invalid destination URL: %v", err)
 		}
 
-		proxy := NewProxy(targetURL)
+		proxy := NewProxy(*targetURL)
 		handler := ProxyRequestHandler(proxy, targetURL, route.Prefix)
 
 		finalHandler := middleware.AuthMiddleware(&config, route.Authentication, http.HandlerFunc(handler))
 		finalHandler = middleware.RateLimitMiddleware(config.RedisConfiguration.Url, config.RedisConfiguration.Password, &route.RateLimitConfiguration, finalHandler)
 		finalHandler = middleware.LoggerMiddleware(finalHandler)
-
+		fmt.Println("targeturl: ", targetURL)
+		fmt.Println("route.prefix: ", route.Prefix)
 		mux.Handle(route.Prefix, finalHandler)
 	}
 
