@@ -21,7 +21,7 @@ routes:
       type: ip
 ```
 
-### Secure the order route with an api key by specifying authentication type to key in config.yaml and adding a key in keys.yaml by route name.
+### Secure the order route
 
 api-keys.yaml
 ```
@@ -37,7 +37,7 @@ go run ./main.go
 ```
 
 ### Running koivu in docker
-Refactor the destination of config.yaml routes to be docker-container names.
+Refactor the destinations of routes to be docker-container names.
 ```
 cd /src
 ```
@@ -55,7 +55,7 @@ docker run -p 8080:8080 --network app-network koivu-api-gateway:latest
 ```
 
 Example when running application as a docker container
-![image](https://github.com/OnniVirtanen/koivu-api-gateway/assets/116679314/9df233b9-9123-4ef5-8c4e-9488dabcac3b)
+![image](https://github.com/OnniVirtanen/koivu-api-gateway/assets/116679314/ae0805b0-220a-4a26-9aaa-64eea9a6edef)
 
 
 Remember that the routed applications should be in the docker network!
