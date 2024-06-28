@@ -1,6 +1,6 @@
 # koivu-api-gateway
 
-Koivu is a lightweight API gateway. By default it has DB-less configuration, ratelimiting, API-key authentication and logging. Koivu is a stateless service and can be run locally, in docker or in kubernetes.
+Koivu is a lightweight API gateway. It has ratelimiting through Redis, API-key authentication and logging. Koivu is a stateless service and can be run locally, in docker or in kubernetes.
 
 ## Get started
 Koivu has three configuration files: routes.yaml, api-keys.yaml and redis.yaml.
